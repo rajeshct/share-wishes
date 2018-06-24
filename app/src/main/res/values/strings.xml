@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Wishes</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="facebook_app_id">1794309330866161</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="adUnitId">ca-app-pub-4143557295054104/5838821757</string>
+    <string name="default_notification_channel_id">1001</string>
+    <string name="interstiatialAdId">ca-app-pub-4143557295054104/9758665711</string>
+    <string name="favourite">Favourite</string>
+    <string name="filter">Filter</string>
+    <string name="back">Back</string>
+    <string name="home">Home</string>
+    <string name="animationText">Share Wishes</string>
+    <string name="noData">Oops no data added yet!!</string>
+    <string name="permissionMissing">Application require permission to save images in directory before sharing.</string>
+    <string name="requestPermission">Request Permission Again</string>
+    <string name="tryAgain">Try Again</string>
+    <string name="AllowPermission">Allow Permission</string>
+    <string name="error_youtube">Youtube not installed</string>
+</resources>

@@ -1,0 +1,107 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+
+apply plugin: 'io.fabric'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "bestwishes.startup.com.wishes"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 2
+        versionName "1.01"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        buildConfigField "String", "DEVELOPER_KEY", '"AIzaSyDp_ccNDxjOpA8mcEVSmB_2yl6UdHlLyrA"'
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildToolsVersion '27.0.3'
+}
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+configurations.all {
+    resolutionStrategy.force "com.android.support:customtabs:$rootProject.supportLibraryVersion"
+}
+
+dependencies {
+    implementation('com.crashlytics.sdk.android:crashlytics:2.8.0@aar') {
+        transitive = true;
+    }
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
+    implementation "com.android.support:support-vector-drawable:$rootProject.supportLibraryVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+   
+    //FireBase Dependencies
+    implementation "com.google.firebase:firebase-firestore:$rootProject.playServicesVersion"
+    implementation "com.google.firebase:firebase-messaging:$rootProject.playServicesVersion"
+    //
+    // Play Service Dependencies
+    implementation "com.google.android.gms:play-services-ads:$rootProject.playServicesVersion"
+    //
+    // RX java Dependencies
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //
+    // Glide Dependencies
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+    //
+    // Facebook Share
+    implementation 'com.facebook.android:facebook-share:4.29.0'
+    //
+    implementation 'android.arch.persistence.room:rxjava2:1.0.0'
+    kapt "android.arch.persistence.room:compiler:1.0.0"
+    implementation 'android.arch.lifecycle:extensions:1.0.0'
+    implementation files('src/main/lib/YouTubeAndroidPlayerApi.jar')
+}
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.AppCompatImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/star_button"
+    android:layout_width="@dimen/dp_share_icon_size"
+    android:layout_height="@dimen/dp_share_icon_size"
+    android:layout_gravity="end"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/text_source"
+    app:srcCompat="@drawable/ic_favorites_svg" />

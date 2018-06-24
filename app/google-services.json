@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "598930201941",
+    "firebase_url": "https://quotes-22f6f.firebaseio.com",
+    "project_id": "quotes-22f6f",
+    "storage_bucket": "quotes-22f6f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598930201941:android:0d610d491860d02f",
+        "android_client_info": {
+          "package_name": "bestwishes.startup.com.wishes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598930201941-6s3q6kf37bv1aahl4inh8p816g2939iu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDp_ccNDxjOpA8mcEVSmB_2yl6UdHlLyrA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
